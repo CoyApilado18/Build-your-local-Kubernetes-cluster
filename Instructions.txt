@@ -74,6 +74,6 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # remove the controlplane taint as by default the controlplane is tainted so that regular app pods is prevented to be scheduled here. For a single node cluster, the taint is removed. 
 kubectl taint nodes --all node-role.kubernetes.io/control-plane- 
 
-# install CNI plugin, we'll use Calico. The cluster is not fully functional until a container network interface (CNI) plugin is installed. Without it the pods cannot communicate with each other and core DNS will not start correctly. We'll use Flannel for this single node setup 
+# install CNI plugin, we'll use Calico. The cluster is not fully functional until a container network interface (CNI) plugin is installed. Without it the pods cannot communicate with each other and core DNS will not start correctly. 
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml 
 
